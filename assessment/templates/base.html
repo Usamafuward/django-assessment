@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables Visualization</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+    <header style="background-color: #333; color: #fff; padding: 10px 0; text-align: center;">
+        <h1>Data Visualization</h1>
+        <nav>
+            <ul style="list-style-type: none; padding: 0;">
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'school_list' %}" style="color: #fff; text-decoration: none;">Schools</a></li>
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'class_list' %}" style="color: #fff; text-decoration: none;">Classes</a></li>
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'assessment_area_list' %}" style="color: #fff; text-decoration: none;">Assessment Areas</a></li>
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'answer_list' %}" style="color: #fff; text-decoration: none;">Answers</a></li>
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'award_list' %}" style="color: #fff; text-decoration: none;">Awards</a></li>
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'student_list' %}" style="color: #fff; text-decoration: none;">Students</a></li>
+                <li style="display: inline; margin: 0 10px;"><a href="{% url 'summary_list' %}" style="color: #fff; text-decoration: none;">Summary</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding: 20px; background-color: #fff;">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer style="background-color: #333; color: white; text-align: center; padding: 10px 0; position: fixed; width: 100%; bottom: 0;">
+        <p>&copy; 2024 Django Project</p>
+    </footer>
+</body>
+</html>

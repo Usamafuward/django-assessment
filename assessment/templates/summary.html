@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 style="color: #333; margin-bottom: 20px;">Summary Data</h2>
+<table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">School ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Participant</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Sydney Percentile</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Assessment Area ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Award ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Class ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Correct Answer Percentage Per Class</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Correct Answer</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Student ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Participant</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Student Score</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Subject ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Category ID</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Year Level</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #333; color: white;">Answer ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for summary in summaries %}
+        <tr style="border: 1px solid #ddd; padding: 8px; {% if forloop.counter0|divisibleby:2 %}background-color: #f9f9f9;{% endif %}">
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.school_id }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.sydney_participant }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.sydney_percentile }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.assessment_area_id }}</td> 
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.award_id }}</td> 
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.class_id }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.correct_answer_percentage_per_class }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.correct_answer }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.student_id }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.participant }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.student_score }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.subject_id }}</td> 
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.category_id }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.year_level_name }}</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">{{ summary.answer_id }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
