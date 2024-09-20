@@ -1,31 +1,10 @@
 # docker-compose.yml
-
 version: '3.9'
 
 services:
   django: assessment:0.0.1
   db:
     image: postgres
-    environment:
-      POSTGRES_DB: django_db
-      POSTGRES_USER: django_user
-      POSTGRES_PASSWORD: django_password
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
     ports:
       - "8000:8000"
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://django_user:django_password@db:5432/django_db
-
-volumes:
-  postgres_data:
